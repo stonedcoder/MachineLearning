@@ -12,3 +12,13 @@ print type(data)
 print data.shape
 #ds.head(n=5)
 ds.tail(n=3)
+
+
+#for ix in ds.columns:
+   #print ix
+print type(ds.columns)
+
+titles = ds.get('movie_title')
+print len(titles)
+print type(titles)
+
