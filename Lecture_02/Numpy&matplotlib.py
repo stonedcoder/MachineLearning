@@ -19,3 +19,18 @@ my_arr[:,0] +=1.0
 my_arr[:,1] +=2.0
 print np.unique(my_arr, return_counts=True)
 # print my_arr
+
+
+ones = np.ones((4,2), dtype=np.uint8)
+print np.unique(ones)
+
+a = np.array(range(1,100))
+#plt.figure(0)
+plt.plot(a,'r>')
+plt.show()
+#plt.figure(1)
+plt.plot(a*2,a,'g+')
+#plt.plot(a,'g+')
+#plt.show()
+
+
