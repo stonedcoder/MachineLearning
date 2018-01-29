@@ -33,4 +33,11 @@ plt.plot(a*2,a,'g+')
 #plt.plot(a,'g+')
 #plt.show()
 
+arr = np.random.random((1000,2))
+arr1 = np.random.random((1000000,2))
+plt.scatter(arr[:,0], arr[:,1],color='black')
+#plt.scatter(arr1[:,0], arr1[:,1], color='green')
+plt.show()
+
+
 
