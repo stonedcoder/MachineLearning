@@ -98,3 +98,54 @@ print "------------------"
 sum(1,2,3,4,5)
 print "-------------"
 sum(1,2,3,4,5,a=1,b=2,6)
+
+
+class MyClass:
+    my_list = [] ## Shared among all the objects
+    def __init__(self,x=1,y=2):
+        print "Welcome to the constructor"
+        self.x = x
+        self.y = y
+        self.my_private_list = []
+    def add(self):
+        return self.x+self.y
+    def multiply(self):
+        return self.x*self.y
+    def square(self):
+        return self.x**2
+    def addit(self,value):
+        self.my_list.append(value)
+    def add_private(self, value):
+        self.my_private_list.append(value)
+
+ obj1 = MyClass(4)
+print obj1.x
+print obj1.y
+obj1.addit('obj1 value')
+obj1.add_private('v1')
+print obj1.my_private_list
+print "~~~~~~~~~~~~~~~~~~~~~~~~"
+obj2 = MyClass(3,9)
+print obj2.x
+print obj2.y
+obj2.addit('obj2 value')
+obj2.add_private('v2')
+
+print obj1.my_private_list
+
+
+import numpy as np
+print np.unique([1,2,3,4,1])
+
+
+temp_list = [1,2,3,4]
+print type(temp_list)
+np_arr = np.asarray(temp_list)
+temp_list = np.array(temp_list)
+print np_arr.shape
+print type(temp_list)
+
+
+test_mat = np.zeros((2,2))
+print test_mat.dtype
+print type(test_mat)       
