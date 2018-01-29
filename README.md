@@ -1,22 +1,34 @@
 # MachineLearning
-Repository contains of all the 18 lectures regarding ML in Python
+Repository contains : My Experiments, Lecture Code , Algorithms and Reports in Machine-Learning 
 
-Class 01:- Introduction to Machine Learning
+Lecture 01:- Introduction to Machine Learning
 <br>
-Class 02:- Statistical Computation with Python, Working with OpenCV
+Lecture 02:- Statistical Computation with Python, Working with OpenCV
 <br>
-Class 03:- Review of Linear Algebra
+Lecture 03:- Review of Linear Algebra
 <br>
-Class 04:- K-Nearest Neighbors Algorithm
+Lecture 04:- K-Nearest Neighbors Algorithm
 <br>
-Class 05:- K-Means Clustering
+Lecture 05:- K-Means Clustering
 <br>
-Class 06:- Decision Trees and Random Forests
+Lecture 06:- Decision Trees and Random Forests
 <br>
-Class 07:- Linear Regression
+Lecture 07:- Linear Regression
 <br>
-Class 08:- Logisitic Regression
+Lecture 08:- Logisitic Regression
 <br>
-Class 09:- Intro to Neural Nets - Intuition, MLP
+Lecture 09:- Intro to Neural Nets - Intuition, MLP
 <br>
-Class 10:- Backpropogation
+Lecture 10:- Backpropogation
+<br>
+Lecture 11:- Convolutional Neural Network 
+<br>
+Lecture 12:- NaiveBayes 
+<br>
+Lecture 13:- Principal-Component-Analysis
+<br>
+Lecture 14:- Sentiment Detection
+<br>
+Lecture 15:- WordNetMinor
+<br>
+Lecture 16:- Selenium & WebDrivers
