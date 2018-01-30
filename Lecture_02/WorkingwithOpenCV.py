@@ -36,3 +36,12 @@ plt.imshow(image)
 plt.show()
 
 print image.shape
+
+
+# Step 1: Edge Detection
+
+# 1.1: Convert to grayscale
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+plt.figure(1, figsize=(7,7))
+plt.imshow(gray, cmap='gray')
+
