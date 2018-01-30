@@ -64,3 +64,13 @@ plt.figure(3, figsize=(7,7))
 plt.imshow(edged, cmap='gray')
 
 plt.show()
+
+
+# Step 2: Finding largest contour in Edged Image
+
+# 2.1: Find Contours
+(_, contours, _) = cv2.findContours(edged, cv2.RETR_LIST, cv2.CHAIN_APPROX_NO)
+
+# 2.2 Sort contours by area in decreasing order
+contours = sorted(contours, key=cv2.contourArea, reverse=True)
+
