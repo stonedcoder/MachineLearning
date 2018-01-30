@@ -74,3 +74,30 @@ plt.show()
 # 2.2 Sort contours by area in decreasing order
 contours = sorted(contours, key=cv2.contourArea, reverse=True)
 
+# Plotting a bounding rectangle around largest contour for representation purposes
+x,y,w,h = cv2.boundingRect(contours[0])
+cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
+plt.figure(4, figsize=(7,7))
+plt.imshow(image, cmap='gray')
+plt.show()
+
+
+# 2.3 Getting largest approximate contour with 4 vertices
+for c in contours:
+    p = cv2.arcLength(c, True)
+    approx = cv2.approxPolyDP(c, 0.02 * p, True)
+
+    if len(approx) == 4:
+        target = approx
+        break
+
+print 'Largest approximate Contour is: '
+print target
+
+
+# Plotting the largest contour for representation 
+cv2.drawContours(image, [target], -1, (255, 0, 0), 2)
+plt.figure(5, figsize=(7,7))
+plt.imshow(image, cmap='gray')
+plt.show()
+
