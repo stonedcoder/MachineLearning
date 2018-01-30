@@ -56,3 +56,11 @@ plt.imshow(blurred, cmap='gray')
 blurred = cv2.medianBlur(gray, 5)
 plt.figure(2, figsize=(7,7))
 plt.imshow(blurred, cmap='gray')
+
+
+# 1.3: Applying Canny Edge Detection
+edged = cv2.Canny(blurred, 0, 50)
+plt.figure(3, figsize=(7,7))
+plt.imshow(edged, cmap='gray')
+
+plt.show()
