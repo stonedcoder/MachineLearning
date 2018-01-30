@@ -47,7 +47,12 @@ plt.imshow(gray, cmap='gray')
 
 # 1.2: Blurring for Smoothness: 
 # #Gaussian Blur,   
-# Median Blur
+
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+plt.figure(2, figsize=(7,7))
+plt.imshow(blurred, cmap='gray')
+
+# Median Blur
+blurred = cv2.medianBlur(gray, 5)
 plt.figure(2, figsize=(7,7))
 plt.imshow(blurred, cmap='gray')
