@@ -65,3 +65,18 @@ k = 3
 ans = KNN(X_train, Y_train, x_test, 3)
 
 print ans
+
+
+## Test and Train Split
+split = int(0.60*data.shape[0])
+
+train_x = data[:split,:2]
+train_y = data[:split, -1]
+
+print np.unique(train_y, return_counts=True)
+
+test_x = data[split:, :2]
+test_y = data[split:, -1]
+
+print train_x.shape
+print train_y.shape
