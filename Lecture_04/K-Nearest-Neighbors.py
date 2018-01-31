@@ -56,3 +56,12 @@ def KNN(X_train, Y_train, xtest, k=5):
     
     my_ans = freq[0][freq[1].argmax()]
     return my_ans
+
+### Dataset for input
+X_train = test_data[:,:2]
+Y_train = test_data[:, -1]
+x_test = np.array([2.9, 2.9])
+k = 3
+ans = KNN(X_train, Y_train, x_test, 3)
+
+print ans
