@@ -26,3 +26,5 @@ data[dist_01.shape[0]:, :2] = dist_02
 data[dist_01.shape[0]:, -1] = 1.0
 print data.shape
 
+np.random.shuffle(data)
+test_data = data[:10]
