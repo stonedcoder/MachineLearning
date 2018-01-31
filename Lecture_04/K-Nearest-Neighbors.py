@@ -28,3 +28,9 @@ print data.shape
 
 np.random.shuffle(data)
 test_data = data[:10]
+
+
+def distance_euclid(p1, p2):
+    ## Euclidian
+    d = np.sqrt(((p1-p2)**2).sum())
+    return d
