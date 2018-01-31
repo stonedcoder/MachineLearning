@@ -1,4 +1,6 @@
 import cv2
+import inline as inline
+import matplotlib as matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -11,7 +13,7 @@ def rectify(h):
 
     add = h.sum(1)
     # print add
-    
+
     hnew[0] = h[np.argmin(add)]
     hnew[2] = h[np.argmax(add)]
 
@@ -101,3 +103,10 @@ plt.figure(5, figsize=(7,7))
 plt.imshow(image, cmap='gray')
 plt.show()
 
+
+
+# Step 3: Mapping (Transforming) target points to 800x800 quadrilateral
+
+approx = rectify(target)
+print '\nLargest approximate Contour after rectification is: '
+print approx
