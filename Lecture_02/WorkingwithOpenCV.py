@@ -121,3 +121,24 @@ print '\nImage Contour after perspective transform is: '
 plt.figure(6, figsize=(7,7))
 plt.imshow(dst, cmap='gray')
 plt.show()
+
+
+
+# Step 4: Using thresholding on warped image to get scanned effect (If Required)
+ret,th1 = cv2.threshold(dst, 127, 255, cv2.THRESH_BINARY)
+plt.figure(6, figsize=(7,7))
+plt.imshow(th1, cmap='gray')
+
+th2 = cv2.adaptiveThreshold(dst,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,2)
+plt.figure(7, figsize=(7,7))
+plt.imshow(th2, cmap='gray')
+
+th3 = cv2.adaptiveThreshold(dst,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
+plt.figure(8, figsize=(7,7))
+plt.imshow(th3, cmap='gray')
+
+ret2,th4 = cv2.threshold(dst,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+plt.figure(9, figsize=(7,7))
+plt.imshow(th4, cmap='gray')
+
+plt.show()
