@@ -79,4 +79,17 @@ test_x = data[split:, :2]
 test_y = data[split:, -1]
 
 print train_x.shape
-print train_y.shape
+print train_y.shape 
+
+
+def get_acc(kx,x_train,x_test,y_train, y_test):
+    preds = []
+    for ix in range(x_test.shape[0]):
+        label = KNN(x_train, y_train, x_test[ix], k=kx)
+        preds.append(label)
+    preds = np.array(preds)
+    
+    return 100*float((preds==y_test).sum())/y_test.shape[0] 
+
+for kx in range(3, 9, 2):
+    print kx, " | ", get_acc(kx,train_x,test_x, train_y, test_y)
