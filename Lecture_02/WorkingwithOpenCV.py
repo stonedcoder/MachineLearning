@@ -110,3 +110,14 @@ plt.show()
 approx = rectify(target)
 print '\nLargest approximate Contour after rectification is: '
 print approx
+
+
+pts2 = np.float32([[0,0],[800,0],[800,800],[0,800]])
+M = cv2.getPerspectiveTransform(approx,pts2)
+dst = cv2.warpPerspective(orig,M,(800,800))
+
+dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
+print '\nImage Contour after perspective transform is: '
+plt.figure(6, figsize=(7,7))
+plt.imshow(dst, cmap='gray')
+plt.show()
