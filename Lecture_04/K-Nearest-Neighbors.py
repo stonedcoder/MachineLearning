@@ -37,8 +37,22 @@ def distance_euclid(p1, p2):
 
 
 def distance(p1, p2):
-    #Manhattan Distance
-    d = (abs(p1-p2)).sum()
+   
+ #Manhattan Distance    d = (abs(p1-p2)).sum()
     return d
 
 distance(np.array([1.0,1.0]), np.array([3.0, 3.0]))
+
+
+def KNN(X_train, Y_train, xtest, k=5):
+    vals = []
+    for ix in range(X_train.shape[0]):
+        d = distance_euclid(X_train[ix], xtest)
+        vals.append([d,Y_train[ix]])
+    
+    sorted_vals = sorted(vals, key=lambda mn:mn[0])
+    neighbours = np.array(sorted_vals)[:k,-1]
+    freq = np.unique(neighbours, return_counts=True)
+    
+    my_ans = freq[0][freq[1].argmax()]
+    return my_ans
