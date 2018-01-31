@@ -1,5 +1,5 @@
 # Machine-Learning
-Repository contains : My Experiments, Lecture Code , Algorithms and Reports in Machine-Learning 
+Repository contains : My Experiments, Lecture Code , Algorithms and Reports for a beginner to becoming a Machine Learning Engineer .
 
 
 Lecture 01:- Introduction to Machine Learning
