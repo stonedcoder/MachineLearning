@@ -34,3 +34,11 @@ def distance_euclid(p1, p2):
     ## Euclidian
     d = np.sqrt(((p1-p2)**2).sum())
     return d
+
+
+def distance(p1, p2):
+    #Manhattan Distance
+    d = (abs(p1-p2)).sum()
+    return d
+
+distance(np.array([1.0,1.0]), np.array([3.0, 3.0]))
