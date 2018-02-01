@@ -109,3 +109,7 @@ import sklearn
 from sklearn.neighbors import KNeighborsClassifier
 import warnings
 warnings.filterwarnings('ignore')
+
+neigh = KNeighborsClassifier(n_neighbors=5)
+neigh.fit(fashion_train_x, fashion_train_y)
+100*neigh.score(fashion_test_x, fashion_test_y)
