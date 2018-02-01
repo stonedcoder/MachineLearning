@@ -27,3 +27,19 @@ data = np.concatenate((dist_01, dist_02))
 print data.shape
 
 print data.min(), data.max()
+
+
+## KMeans Clustering -> Parameter Definition
+K = 4 ## Number of clusters
+clusters = {}
+for cx in range(K):
+    params = {
+        'centroid': np.random.uniform(low=data.min(), high=data.max(),size=(data.shape[1])),
+        'history': [], # history of the centroid locations
+        'points' : [], # points in the cluster -> for centroid recalculation
+    }
+    clusters[cx] = params
+
+colors = ['yellow','red','cyan','green']
+
+rint len(clusters[0]['history'])
