@@ -93,3 +93,11 @@ def get_acc(kx,x_train,x_test,y_train, y_test):
 
 for kx in range(3, 9, 2):
     print kx, " | ", get_acc(kx,train_x,test_x, train_y, test_y)
+
+
+import pandas as pd
+### Fashion dataset for MNIST
+ds = pd.read_csv('./fashion-mnist_train.csv')
+ds.tail(n=3)
+fashion_data = ds.values[:3000]
+print fashion_data.shape
