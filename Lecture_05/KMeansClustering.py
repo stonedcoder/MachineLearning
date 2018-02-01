@@ -14,7 +14,16 @@ dist_02 = np.random.multivariate_normal(mean_02, cov_02, 500)
 
 print dist_01.shape, dist_02.shape
 
+
 plt.scatter(dist_01[:,0],dist_01[:,1], color='red')
 plt.scatter(dist_02[:,0],dist_02[:,1], color='blue')
 
 plt.show()
+
+
+## Input data 
+## (dist_01.shape[0]+dist_02.shape[0], #num_features)
+data = np.concatenate((dist_01, dist_02))
+print data.shape
+
+print data.min(), data.max()
