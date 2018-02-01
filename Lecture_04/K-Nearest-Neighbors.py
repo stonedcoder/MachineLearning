@@ -101,3 +101,11 @@ ds = pd.read_csv('./fashion-mnist_train.csv')
 ds.tail(n=3)
 fashion_data = ds.values[:3000]
 print fashion_data.shape
+
+
+
+get_acc(3,fashion_train_x, fashion_test_x, fashion_train_y, fashion_test_y)
+import sklearn
+from sklearn.neighbors import KNeighborsClassifier
+import warnings
+warnings.filterwarnings('ignore')
