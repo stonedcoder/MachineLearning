@@ -52,3 +52,25 @@ def distance(p1, p2):
     return np.sqrt(((p1-p2)**2).sum())
 
 distance(np.array([0.0,0.0]),np.array([1.0,1.0]))
+
+
+## Execution logic
+n_steps = 3
+for ix in range(n_steps):
+    plt.figure(ix)
+    # Step 1. -> Assign points to clusters
+    for ix in range(data.shape[0]):
+        d = []
+        for cx in range(K):
+            dist = distance(data[ix], clusters[cx]['centroid'])
+            d.append(dist)
+
+        d = np.asarray(d)
+        c_id = np.argmin(d) ## Cluster ID for the particular point
+
+        plt.scatter(data[ix,0], data[ix, 1], color=colors[c_id])
+
+        clusters[c_id]['points'].append(data[ix])
+
+    for cx in range(K):
+        plt.scatter(clusters[cx]['centroid'][0], clusters[cx]['centroid'][1], color='black')
