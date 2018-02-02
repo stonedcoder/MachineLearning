@@ -27,3 +27,8 @@ print centr_colors
 
 print centr_colors.shape
 
+freq = np.array(np.unique(km.labels_, return_counts=True)[1], dtype='float32')
+print freq
+print freq.sum()
+freq = freq/pixels.shape[0]
+print freq
