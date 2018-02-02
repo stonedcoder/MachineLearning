@@ -42,4 +42,13 @@ for cx in range(K):
 
 colors = ['yellow','red','cyan','green']
 
-rint len(clusters[0]['history'])
+print len(clusters[0]['history'])
+
+clusters[0]['centroid'] = np.array([15,2])
+
+## Defining a Distance function
+def distance(p1, p2):
+    '''Euclidian Distance'''
+    return np.sqrt(((p1-p2)**2).sum())
+
+distance(np.array([0.0,0.0]),np.array([1.0,1.0]))
