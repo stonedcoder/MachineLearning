@@ -18,3 +18,12 @@ print pixels.shape
 plt.imshow(im)
 plt.show()
 
+km = KMeans(n_clusters=8)
+km.fit(pixels)
+
+centr_colors = np.array(km.cluster_centers_, dtype='uint8')
+print centr_colors.dtype
+print centr_colors
+
+print centr_colors.shape
+
