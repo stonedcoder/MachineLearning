@@ -78,3 +78,23 @@ rf = RandomForestClassifier(n_estimators=145)
 rf.fit(X_train, Y_train)
 print rf.score(X_test, Y_test)
 
+
+### decision tree
+print data.shape
+
+def data_split(dataset, col, value):
+    data_right = []
+    data_left = []
+    
+    for ix in range(dataset.shape[0]):
+        
+        if dataset[ix, col] > value:
+            data_right.append(data[ix,:])
+        else:
+            data_left.append(data[ix, :])
+    
+    return np.array(data_right), np.array(data_left)
+
+
+
+
