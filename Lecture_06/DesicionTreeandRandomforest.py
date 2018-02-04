@@ -110,3 +110,26 @@ def entropy(dataset, col=0):
     return ent
 
 
+def information_gain(dataset,subset):
+    return entropy(dataset) - entropy(subset)
+
+def information_gain2(dataset, left_subset, right_subset):
+    
+    left = left_subset
+    right = right_subset
+    
+    h_data = entropy(dataset)
+    if left.shape[0]>0:
+        left_gain = h_data - entropy(left)
+    else:
+        left_gain = -100000
+        
+    if right.shape[0]>0:
+        right_gain = h_data - entropy(right)
+    else:
+        right_gain = -100000
+    
+    total_gain = right_gain + left_gain
+    return total_gain
+
+
