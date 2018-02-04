@@ -29,7 +29,7 @@ sex_mapping = {
 }
 df.Sex = df.Sex.map(sex_mapping)
 
-
+#Data shapes . 
 data = df.values
 print data.shape
 
