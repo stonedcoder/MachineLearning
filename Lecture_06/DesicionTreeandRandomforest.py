@@ -28,3 +28,12 @@ sex_mapping = {
     'female': 1,
 }
 df.Sex = df.Sex.map(sex_mapping)
+
+
+data = df.values
+print data.shape
+
+df = df.dropna(axis=0)
+
+data = df.values
+print data.shape
