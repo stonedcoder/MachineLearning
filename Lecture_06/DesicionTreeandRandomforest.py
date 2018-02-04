@@ -68,3 +68,13 @@ import sklearn
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+
+dt = DecisionTreeClassifier()
+dt.fit(X_train, Y_train)
+print dt.score(X_test, Y_test)
+
+## Random forest
+rf = RandomForestClassifier(n_estimators=145)
+rf.fit(X_train, Y_train)
+print rf.score(X_test, Y_test)
+
