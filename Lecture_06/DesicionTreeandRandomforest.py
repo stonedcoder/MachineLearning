@@ -95,6 +95,18 @@ def data_split(dataset, col, value):
     
     return np.array(data_right), np.array(data_left)
 
-
+def entropy(dataset, col=0):
+    p = []
+    
+    p_survive = dataset[:, col].mean()
+    p.append(p_survive)
+    
+    p.append(1-p[0])
+    
+    ent = 0.0
+    for px in p:
+        ent += (-1.0*px*np.log2(px))
+    
+    return ent
 
 
