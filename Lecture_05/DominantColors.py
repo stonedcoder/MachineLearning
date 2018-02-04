@@ -45,3 +45,16 @@ print DOM[0][1]
 for ix in DOM:
     print ix
     print "----------"
+
+
+#Pattching images . 
+patch = np.ones((50, 500, 3))
+start = 0
+for ix in range(km.n_clusters):
+    width = int(DOM[ix][0]*patch.shape[1])
+    end = start+width
+    patch[:,start:end,:] = 255 - DOM[ix][1]
+    start = end
+    plt.axis("off")
+    plt.imshow(patch)
+plt.show()
