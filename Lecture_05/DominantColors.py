@@ -32,3 +32,4 @@ print freq
 print freq.sum()
 freq = freq/pixels.shape[0]
 print freq
+
