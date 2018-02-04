@@ -33,3 +33,15 @@ print freq.sum()
 freq = freq/pixels.shape[0]
 print freq
 
+
+dom = [[freq[ix], centr_colors[ix]] for ix in range(km.n_clusters)]
+
+DOM = sorted(dom, key=lambda z:z[0], reverse=True)
+#DOM = np.array(DOM)
+print DOM[0][1]
+#print DOM.shape
+
+
+for ix in DOM:
+    print ix
+    print "----------"
