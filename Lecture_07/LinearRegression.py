@@ -52,3 +52,14 @@ def get_grad(x,w,y_true):
     grad_1 = grad_1/m
     
     return [grad_0, grad_1]
+
+
+  def get_stochastic_grad(x_sample,w,y_true):
+        
+    grad_0 = 0.0
+    grad_1 = 0.0
+    
+    grad_0 = (y_true - hypothesis(x_sample, w))*(-1)
+    grad_1 = (y_true - hypothesis(x_sample, w))*(-1*x_sample)
+    
+    return [grad_0, grad_1]  
