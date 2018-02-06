@@ -36,3 +36,19 @@ def get_error(x,w, y_true):
         
     err = err/2*m
     return err
+
+
+def get_grad(x,w,y_true):
+    grad_0 = 0.0
+    grad_1 = 0.0
+    
+    m = x.shape[0]
+    
+    for ix in range(m):
+        grad_0 += (y_true[ix] - hypothesis(x[ix], w))*(-1)
+        grad_1 += (y_true[ix] - hypothesis(x[ix], w))*(-1*x[ix])
+        
+    grad_0 = grad_0/m
+    grad_1 = grad_1/m
+    
+    return [grad_0, grad_1]
