@@ -133,3 +133,66 @@ def information_gain2(dataset, left_subset, right_subset):
     return total_gain
 
 
+
+INFINITY = -10000000
+class DT:
+    def __init__(self, depth, max_depth):
+        self.right = None
+        self.left = None
+        self.col_id = None
+        self.value = None
+        self.depth = depth
+        self.max_depth = max_depth
+    
+    def select_attr_And_run(self, dataset):
+        
+        ## Exit Condition
+        if self.depth>= self.max_depth:
+            return 
+        
+        n_cols = 6
+        start_index = 1
+        check_index = 0
+        
+        all_gains = []
+        
+        for cx in range(start_index, start_index+n_cols):
+            split_val = dataset[:, cx].mean()
+            
+            right, left = data_split(dataset, cx, split_val)
+            
+            if left.shape[0] > 0:
+                left_gain = information_gain(dataset, left)
+            else:
+                left_gain = INFINITY
+            
+            if right.shape[0] > 0:
+                right_gain = information_gain(dataset, right)
+            else:
+                right_gain = INFINITY
+            
+            comb_gain = right_gain + left_gain
+            all_gains.append(comb_gain)
+        
+        all_gains = np.array(all_gains)
+        self.col_id = np.argmax(all_gains) + start_index
+        self.value = dataset[:, self.col_id].mean()
+        
+        data_right, data_left = data_split(dataset, self.col_id, self.value)
+        
+        if data_right.shape[0] > 0:
+            self.right = DT(self.depth+1,self.max_depth)
+            self.right.select_attr_And_run(data_right)
+        
+        if data_left.shape[0] > 0:
+            self.left = DT(self.depth+1, self.max_depth)
+            self.left.select_attr_And_run(data_left)
+        
+        return 
+    
+    def predict(example):
+        ## example of shape :- (1, #features)
+        ## Here -> (1,6)
+        pass    
+
+
