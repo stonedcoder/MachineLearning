@@ -63,3 +63,14 @@ def get_grad(x,w,y_true):
     grad_1 = (y_true - hypothesis(x_sample, w))*(-1*x_sample)
     
     return [grad_0, grad_1]  
+
+
+ def gradient_descent(x,w,y_true, learning_rate=0.1):
+        error = get_error(x,w, y_true)
+    
+    [grad_0, grad_1] = get_grad(x, w, y_true)
+    
+    w[0] = w[0] - learning_rate*grad_0
+    w[1] = w[1] - learning_rate*grad_1
+    
+    return error, w   
