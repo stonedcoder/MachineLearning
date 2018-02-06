@@ -19,3 +19,8 @@ print X_train.shape
 print X_test.shape
 
 print y_test.shape
+
+## Methods we need to write
+def hypothesis(x,w):
+    x0 = 1
+    return w[0]*x0 + x*[1]
