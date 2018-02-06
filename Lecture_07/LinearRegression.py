@@ -24,3 +24,15 @@ print y_test.shape
 def hypothesis(x,w):
     x0 = 1
     return w[0]*x0 + x*[1]
+
+
+
+def get_error(x,w, y_true):
+    err = 0.0
+    m = x.shape[0]
+    
+    for ix in range(m):
+        err += (y_true[ix] - hypothesis(x[ix], w))**2
+        
+    err = err/2*m
+    return err
