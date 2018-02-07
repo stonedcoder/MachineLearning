@@ -41,3 +41,28 @@ y_test = data[split:, -1]
 
 print X_train.shape, y_train.shape
 print X_test.shape, y_test.shape
+
+
+
+### Functions
+
+def sigmoid(z):
+    return 1.0/(1+np.exp(-1*z))
+
+def hypothesis(x, w, b):
+    h = (x*w).sum() + b
+    return sigmoid(h)
+
+# Binary CrossEntropy
+def get_error(x, w,y_true, b):
+    err = 0.0
+    
+    m = x.shape[0]
+    for ix in range(m):
+        if y_true[ix] == 0:
+            err += (np.log(1- hypothesis(x[ix], w, b)))
+        else:
+            err += (np.log(hypothesis(x[ix], w, b)))
+    
+    err = err/m
+    return err
