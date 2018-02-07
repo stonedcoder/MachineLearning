@@ -29,3 +29,15 @@ print data.shape
 np.random.shuffle(data)
 
 print data[:10]
+
+
+split = int(0.65*data.shape[0])
+
+X_train = data[:split, :2]
+X_test = data[split:, :2]
+
+y_train = data[:split, -1]
+y_test = data[split:, -1]
+
+print X_train.shape, y_train.shape
+print X_test.shape, y_test.shape
