@@ -26,3 +26,12 @@ print Y.shape
 
 for ix in range(10):
     print Y[ix], "---", y[ix]
+
+split = int(0.8*X.shape[0])
+X_train = X[:split,:]
+X_test = X[split:,:]
+
+y_train = Y[:split]
+y_test = Y[split:]
+
+print X_train.shape
