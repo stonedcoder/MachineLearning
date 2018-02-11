@@ -13,3 +13,10 @@ print X.shape, y.shape
 plt.scatter(X[:, 0], X[:, 1])
 plt.show()
 
+
+for ix in range(X.shape[0]):
+    if y[ix] == 0:
+        plt.scatter(X[ix, 0], X[ix, 1], color='red')
+    else:
+        plt.scatter(X[ix, 0], X[ix, 1], color='green')
+
