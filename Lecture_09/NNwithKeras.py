@@ -54,3 +54,8 @@ model2.add(Dense(2, input_shape=(2,)))
 for ix in range(5):
     model2.add(Dense(5))
 model2.summary()
+
+model.compile(optimizer='adagrad', loss='categorical_crossentropy', metrics=['accuracy'])
+
+hist = model.fit(X_train, y_train, nb_epoch=100,batch_size=100,verbose=2, shuffle=True ,validation_data=(X_test, y_test))
+
