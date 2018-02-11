@@ -35,3 +35,15 @@ y_train = Y[:split]
 y_test = Y[split:]
 
 print X_train.shape
+
+
+## NN in keras
+model = Sequential()
+
+model.add(Dense(5,input_shape = (2,)))
+model.add(Activation('relu'))
+
+model.add(Dense(2))
+model.add(Activation('softmax'))
+
+model.summary()
