@@ -20,3 +20,9 @@ for ix in range(X.shape[0]):
     else:
         plt.scatter(X[ix, 0], X[ix, 1], color='green')
 
+
+Y = np_utils.to_categorical(y)
+print Y.shape
+
+for ix in range(10):
+    print Y[ix], "---", y[ix]
