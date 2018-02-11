@@ -47,3 +47,10 @@ model.add(Dense(2))
 model.add(Activation('softmax'))
 
 model.summary()
+
+model2 = Sequential()
+
+model2.add(Dense(2, input_shape=(2,)))
+for ix in range(5):
+    model2.add(Dense(5))
+model2.summary()
