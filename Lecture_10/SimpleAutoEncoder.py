@@ -36,3 +36,21 @@ encoder = Model(input=[inp], output=[enc_out])
 dec_inp = Input(shape=(100,))
 dec_out = ya(y(a1(dec_inp)))
 decoder = Model(input=[dec_inp], output=[dec_out])
+
+
+
+ex = encoder.predict(data[100:200])
+dx = decoder.predict(ex)
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+
+n = np.random.choice(100)
+
+plt.imshow(data[n+100].reshape((28, 28)), cmap='gray')
+plt.show()
+
+plt.imshow(dx[n].reshape((28, 28)), cmap='gray')
+plt.show()
+
