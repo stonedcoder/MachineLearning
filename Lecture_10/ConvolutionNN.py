@@ -19,3 +19,15 @@ X = np.zeros((out_r, out_c))
 print img.shape
 print X.shape
 
+
+for rx in range(out_r):
+    for cx in range(out_c):
+        image_patch = img[rx:rx+K.shape[0], cx:cx+K.shape[1]]
+        prod = image_patch*K
+        X[rx, cx] = prod.sum()
+
+X_ = X*(X>0) ## (X>0) map all values in activation map to 0(when 0) and 1 (when non-zero)
+plt.imshow(X_)
+plt.show()
+
+
