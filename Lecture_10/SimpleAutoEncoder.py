@@ -18,3 +18,10 @@ ya = Activation('sigmoid')
 yout =  ya(y(a1(h1(inp))))
 model = Model(input=[inp], output=[yout])
 model.summary()
+
+
+model.compile(optimizer='adam', loss='MSE', metrics=['accuracy'])
+
+split = int(0.8*data.shape[0])
+
+model.fit(data[:split], data[:split],nb_epoch=60, batch_size=30,verbose=2, validation_data=(data[split:], data[split:]))
