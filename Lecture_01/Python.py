@@ -138,7 +138,7 @@ import numpy as np
 print np.unique([1,2,3,4,1])
 
 
-temp_list = [1,2,3,4]
+temp_list = [1,2,3,4,5,67,8,90]
 print type(temp_list)
 np_arr = np.asarray(temp_list)
 temp_list = np.array(temp_list)
